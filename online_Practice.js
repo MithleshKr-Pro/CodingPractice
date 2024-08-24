@@ -497,7 +497,6 @@ const checkWinner=()=>{
                 newGame.classList.add("hide");
                 newGame.classList.remove("newGame");
                 disableBtn();
-            }else{
             }
         }
     } 
