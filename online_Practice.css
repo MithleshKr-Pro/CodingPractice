@@ -38,7 +38,7 @@ color: white;
 
 /* newLecture */
 /* TIC TAC TOE starts */
-*{
+/* *{
     text-align: center;
 }
 .btn{
@@ -64,14 +64,14 @@ color: white;
 .parent_div{
     /* left: 50%;
     transform: translate(-50%,10%);
-    position: absolute;  */
+    position: absolute;  
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     width: 50vmin;
     height: 70vmin;
-}
-body{
+} */
+/* body{
     
     background: linear-gradient(rgba(100, 203, 223, 0.365),rgba(255,255,255,0.32));
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@ body{
 h1{
     padding: 0;
     margin: 0;
-}
+} */
 /* 
 .child1,.child2,.child3{
     width: 80px;
@@ -105,7 +105,7 @@ h1{
     width: fit-content;
     justify-content: center;
 }  */
-.winnerMssg{
+/* .winnerMssg{
     padding: 5vmin;
     margin: 2vmin;
     border-radius: 0.8rem;
@@ -142,8 +142,8 @@ h1{
     color: white;
     font-size: large;
     padding: 3vmin;
-}
-.newGame{
+} */
+/* .newGame{
     margin: 10vmin 1vmin 0em 4vmin;
     border-radius: 0.5rem;
     border:none;
@@ -161,4 +161,5 @@ h1{
     color: white;
     font-size: large;
     padding: 3vmin;
-}
+}  */
+/* TIC TAC TOE Ends */
