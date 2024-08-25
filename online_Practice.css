@@ -58,6 +58,8 @@ color: white;
     justify-content: center;
     flex-wrap: nowrap;
     height: max-content;
+    position: relative;
+    top: 15vmin;
 }
 .parent_div{
     /* left: 50%;
@@ -66,14 +68,27 @@ color: white;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    align-self: center;
     width: 50vmin;
     height: 70vmin;
-
 }
 body{
     
     background: linear-gradient(rgba(100, 203, 223, 0.365),rgba(255,255,255,0.32));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.heading{
+    background-color:rgba(255, 255, 255, 0.289);
+    backdrop-filter: blur(50px);
+    position:fixed;
+    top: 0px;
+    width: 100vw;
+    left: 0px;
+    box-shadow: 0 .5vmin 1vmin rgba(102, 108, 16, 0.787);
+}
+h1{
+    padding: 0;
+    margin: 0;
 }
 /* 
 .child1,.child2,.child3{
@@ -120,7 +135,7 @@ body{
     width: max-content;
 }
 #reset{
-    margin: 4vmin 3vmin 0vmin 0;
+    margin: 10vmin 3vmin 0vmin 0;
     border-radius: 0.5rem;
     border:none;
     background-color: rgb(84, 149, 229);
@@ -129,7 +144,7 @@ body{
     padding: 3vmin;
 }
 .newGame{
-    margin: 4vmin 1vmin 0em 4vmin;
+    margin: 10vmin 1vmin 0em 4vmin;
     border-radius: 0.5rem;
     border:none;
     background-color: rgb(84, 149, 229);
@@ -139,7 +154,7 @@ body{
     display: none;
 }
 .hide{
-    margin: 4vmin 1vmin 0em 4vmin;
+    margin: 10vmin 1vmin 0em 4vmin;
     border-radius: 0.5rem;
     border:none;
     background-color: rgb(84, 149, 229);

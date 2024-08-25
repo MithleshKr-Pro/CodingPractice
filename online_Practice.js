@@ -413,9 +413,6 @@
 let h1=document.querySelector("h1");
 h1.style.color="dodgerblue"
 h1.style.fontFamily="sans-serif"
-let Row1=document.querySelectorAll(".child1");
-let Row2=document.querySelectorAll(".child2");
-let Row3=document.querySelectorAll(".child3");
 let resetBtn=document.querySelector("#reset");
 let btns=document.querySelectorAll(".btn");
 let Btn=document.getElementsByTagName("button");
