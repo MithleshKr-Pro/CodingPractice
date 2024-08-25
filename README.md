@@ -1,4 +1,4 @@
-# CodePractice
+CodePractice
 # <a href="https://www.mith1668.great-site.net">my Page</a>
-# it's Practice Code
-# -- End --
+it's Practice Code
+-- End --
