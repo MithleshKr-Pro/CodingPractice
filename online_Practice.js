@@ -451,18 +451,30 @@ const winPatterns=[
     [3,4,5],
     [6,7,8]
 ];
-btns.forEach((btn)=>{
-    btn.addEventListener("click",()=>{
+btns.forEach((bt)=>{
+    bt.addEventListener("click",()=>{
         console.log("Button was Clicked");
         if(turn0){
-            btn.innerText="O";
+            bt.innerText="O";
+            bt.style.color="black";
             turn0=false;
         }else{
-            btn.innerText="X";
+            bt.innerText="X";
+            bt.style.color="red";
             turn0=true;
         }
-        btn.disabled="true";
-        checkWinner();
+        bt.disabled="true";
+        let winner=checkWinner();
+        if (!winner){
+            const alldisabled=Array.from(btns).every(btn => btn.disabled);
+            if(alldisabled){  
+                parent.prepend(winnerMsg);        
+                winnerMsg.classList.add("winnerMssg");
+                winnerMsg.innerText="NoBody Wins Play Again!!";
+                newGame.classList.add("hide");
+                newGame.classList.remove("newGame");
+            }
+        }
     })
 })
 
@@ -472,7 +484,7 @@ const disableBtn=()=>{
     }
 }
 const resetButn=()=>{
-    for (button of btns){
+    for (button of btns){ //needs to understand more
         button.disabled=false;
         button.innerText="";
         winnerMsg.classList.remove("winnerMssg");
@@ -497,9 +509,21 @@ const checkWinner=()=>{
                 newGame.classList.add("hide");
                 newGame.classList.remove("newGame");
                 disableBtn();
+                return true;
             }
         }
     } 
+    return false;
+}
+
+const gameDraw=()=>{
+    
+    if (checkWinner()===false){
+        winnerMsg.classList.add("winnerMssg");
+        winnerMsg.innerText="draw Play Again!!";
+        newGame.classList.add("hide");
+        newGame.classList.remove("newGame");
+    }
 }
 
 resetGame.addEventListener("click",resetButn);
