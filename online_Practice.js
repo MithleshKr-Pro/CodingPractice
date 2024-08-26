@@ -531,63 +531,201 @@
 
 //rock paper scissors Starts
 
-let userScore=0;
-let compScore=0;
+// let userScore=0;
+// let compScore=0;
 
-const choices=document.querySelectorAll(".choice");
-const msg=document.querySelector("#msg")
-const msgContainer=document.querySelector(".msg_container")
-const comScore=document.querySelector("#lost")
-const usrScore=document.querySelector("#won")
+// const choices=document.querySelectorAll(".choice");
+// const msg=document.querySelector("#msg")
+// const msgContainer=document.querySelector(".msg_container")
+// const comScore=document.querySelector("#lost")
+// const usrScore=document.querySelector("#won")
 
-const genCompChoice=()=>{
-    const options=["rock","paper","scissors"];
-    const randIdx=Math.floor((Math.random() *3));
-    return options[randIdx];
-}
-const showWinner=(userWin,userChoice,compChoice)=>{
-    if(userWin){
-        userScore++;
-        usrScore.innerText=userScore;
-        msgContainer.style.backgroundColor="Green";
-        msg.innerText=`You WON! Your ${userChoice} beats ${compChoice}`;
-        msg.style.color="white";
+// const genCompChoice=()=>{
+//     const options=["rock","paper","scissors"];
+//     const randIdx=Math.floor((Math.random() *3));
+//     return options[randIdx];
+// }
+// const showWinner=(userWin,userChoice,compChoice)=>{
+//     if(userWin){
+//         userScore++;
+//         usrScore.innerText=userScore;
+//         msgContainer.style.backgroundColor="Green";
+//         msg.innerText=`You WON! Your ${userChoice} beats ${compChoice}`;
+//         msg.style.color="white";
         
-        }else{
-        compScore++;
-        comScore.innerText=compScore;
-        msgContainer.style.backgroundColor="red";
-        msg.innerText=`You LOST!! ${compChoice} beats Your ${userChoice}`;
-        msg.style.color="white";
-    }
-}
-const playGame=(userChoice)=>{
-    const compChoice=genCompChoice();
-    if (userChoice===compChoice){
-        msg.innerText="Game was Draw. Play Again!!";
-        msgContainer.style.backgroundColor="#081b31";
-        msg.style.color="white";
+//         }else{
+//         compScore++;
+//         comScore.innerText=compScore;
+//         msgContainer.style.backgroundColor="red";
+//         msg.innerText=`You LOST!! ${compChoice} beats Your ${userChoice}`;
+//         msg.style.color="white";
+//     }
+// }
+// const playGame=(userChoice)=>{
+//     const compChoice=genCompChoice();
+//     if (userChoice===compChoice){
+//         msg.innerText="Game was Draw. Play Again!!";
+//         msgContainer.style.backgroundColor="#081b31";
+//         msg.style.color="white";
 
-    }else{
-        let userWin=true;
-        if(userChoice==="rock"){
-            //scissors,paper
-            userWin=compChoice==="scissors" ? true:false;
-        }else if(userChoice==="paper"){
-            //rock,scissors
-            userWin=compChoice==="rock" ? true:false;
-        }else{
-            //paper,rock
-            userWin=compChoice==="rock" ? false:true;
-        }
-        showWinner(userWin,userChoice,compChoice);
+//     }else{
+//         let userWin=true;
+//         if(userChoice==="rock"){
+//             //scissors,paper
+//             userWin=compChoice==="scissors" ? true:false;
+//         }else if(userChoice==="paper"){
+//             //rock,scissors
+//             userWin=compChoice==="rock" ? true:false;
+//         }else{
+//             //paper,rock
+//             userWin=compChoice==="rock" ? false:true;
+//         }
+//         showWinner(userWin,userChoice,compChoice);
+//     }
+// }
+// choices.forEach((choice)=>{
+//     let userChoice=choice.getAttribute("id");
+//     choice.addEventListener("click",()=>{
+//         playGame(userChoice)
+//     })
+// })
+
+//rock paper scissors ENDS
+
+//new Lecture
+const Employee={
+    Name:"Mithlesh Kumar",
+    Degree:"B.E.",
+    College:"UIET",
+    Salary (){
+        console.log("Hi! There");
+        return "start";
     }
 }
-choices.forEach((choice)=>{
-    let userChoice=choice.getAttribute("id");
-    choice.addEventListener("click",()=>{
-        //console.log("choice was clicked",userChoice);
-        playGame(userChoice)
-    })
-})
+const KaranArjun={
+    Name:"KaranArjun",
+    Degree:"B.E.",
+    College:"UIET",
+
+
+}
+KaranArjun.__proto__=Employee;
+const Kankesh={
+    Name:"Kankesh Kumar",
+    Degree:"B.E.",
+    College:"UIET"
+}
+Kankesh.__proto__=Employee;
+const Raunak={
+    Name:"Raunak Kumar",
+    Degree:"B.E.",
+    College:"UIET"
+
+}
+Raunak.__proto__=Employee;
+const Deepak={
+    Name:"Deepak Kumar",
+    Degree:"B.E.",
+    College:"UIET",
+
+}
+Deepak.__proto__=Employee;
+
+class ToyotaCar{
+    constructor(brand,milage){
+        console.log("Creating New Object");
+        this.brand=brand;
+        this.milage=milage;
+    }
+    start(){
+        console.log("Start");
+    }
+    stop (){
+        console.log("Stop");
+    }
+    setBrand(Brand){     //Imp
+        this.brand=Brand;
+    }
+}
+let Fortuner=new ToyotaCar("Fortuner",10); //constructor
+
+let Lexus=new ToyotaCar("Lexus",12); //constructor
+class parent{
+    hello(){
+        console.log("Hello");
+    }
+}
+class child extends parent{
+    Hello(){
+        console.log("Hello Child");
+
+    }
+}
+let obj=new child();
+
+class person{
+    constructor(name){
+        this.species="Homo-Sapiens";
+        this.name=name;
+    }
+    eat(){
+        console.log('Eat');
+    }
+    sleep(){
+        console.log("sleep")
+    }
+    work(){
+        console.log("Studies");
+    }
+}
+class Engineer extends person{
+    constructor(name){
+        super(name);
+    }
+    work(){
+        super.eat()
+        console.log("solve Problems,Build something");
+    }
+}
+
+class Doctor extends person{
+    treatment(){
+        console.log("Treat Patients")
+    }
+    
+}
+
+let Mithlesh=new Engineer("Mithlesh Kumar");
+let Anjali=new Doctor();
+
+// practiceQ1
+let data="Secret Info";
+class user{
+    constructor(name,email){
+        this.name=name;
+        this.email=email;
+    }
+    viewData(){
+        console.log("View DATA",data);
+    }
+}
+let stud1=new user("Mithlesh Kumar","coding4u2@gmail.com");
+let stud2=new user("Kankesh Kumar","abc@gmail.com");
+let prof1=new user("DEAN","dean@college.com")
+
+//practiceQ2
+class Admin extends user{
+    constructor(name,email){
+        super(name,email);
+    }
+    editData(){
+        data="Some new Value";
+        console.log("Edited");
+    }
+}
+let admn1= new Admin("admin1","admin@college.com");
+let admn2= new Admin();
+let admn3= new Admin();
+
+
 
